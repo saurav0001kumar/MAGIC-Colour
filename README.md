@@ -1,2 +1,2 @@
-# MAGIC_Colour
+# MAGIC Colour
 A simple website using django to display a Magic Colour for an individual.
