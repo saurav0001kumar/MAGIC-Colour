@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Magic Color</title>
+</head>
+<body  bgcolor="{{res}}" >
+   
+    
+    <center>
+    <br>
+    <img src="{% static 'images/mag.png' %}" height="200" width="200">  
+    <p>
+     <h1> 
+             <marquee direction="down" behavior="alternate" height=35 scrollamount=1>
+                 <center>Enter your name to know your magic colour!</center>
+             </marquee>
+        </h1>
+        
+     
+         <form action="magic" method='POST'>
+        {%csrf_token%}
+         <input type="text" placeholder="Enter your name to know your magic colour!" name="name" size="64" ><br><br>
+         <input type="submit" value="You're Good to GO!">
+        </form>
+     <br>
+    {%if res is None%}
+    <h4>
+        <font color="red" face="verdana">Your Magic Colour will be shown as the Background Colour of this page.</font>
+    </h4>
+    {%else%}
+    <h1>
+        Hello <b>{{res}} </b>! Your Magic color is displayed as "Background Colour" of this page.
+        <br>
+        <font color="White" face="verdana">Hello <b>{{res}} </b>! Your Magic color is displayed as "Background Colour" of this page.</font>
+
+    </h1>
+    {%endif%}
+    </p>
+    <br>
+        <a href="/">
+            <font color="white">
+                 <h3><< Retutn to Home </h3>
+                 <h2><font color="black"><< Retutn to Home </font></h2>
+                 <h1><< Retutn to Home </h1>
+            </font>
+        </a>
+</center>
+</body>
+</html>
