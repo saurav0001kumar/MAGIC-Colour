@@ -1,2 +1,2 @@
 # MAGIC Colour
-A simple website using django framework to display a Magic Colour for an individual.
+A simple website to display a Magic Colour for an individual based on their names.
